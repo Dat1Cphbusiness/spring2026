@@ -27,7 +27,8 @@ public class Player {
     }
 
     public void setScore(int score) {
-        this.score = score;
+        if(score < this.score)
+            this.score = score;
     }
 
     @Override

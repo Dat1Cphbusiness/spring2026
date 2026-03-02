@@ -4,10 +4,11 @@ public class Game {
     private int answer;
     private boolean quit = false;
     private IO io = new IO();
+    Player player;
 
     public void startGame(){
         // Velkommen til bruger (regler: skriv q for at stoppe)
-
+        io.sendMessage("Velkommen til \n \"Gæt et tal\" ");
         // Spørg bruger om navn
         // Vi skal bruge IO til dette
 

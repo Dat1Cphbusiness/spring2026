@@ -20,6 +20,15 @@ public class IO {
         return input;
     }
 
+    public int promptInt(String msg){
+        printHashTags();
+        System.out.println(msg);
+        int input = scanner.nextInt();
+        scanner.nextLine();
+        printHashTags();
+        return input;
+    }
+
     private void printHashTags(){
         System.out.println("###############");
     }

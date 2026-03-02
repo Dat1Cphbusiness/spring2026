@@ -20,6 +20,8 @@ class IO{
     + int promptInt(String msg)
 }
 
+class GraphicIO{}
+
 class Main{
     + void main()
 }
@@ -30,6 +32,7 @@ IO *-- Scanner
 Game *-- IO
 Game *-- Player
 Main *-- Game
+IO <|-- GraphicIO
 
 
 @enduml

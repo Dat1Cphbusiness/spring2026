@@ -3,9 +3,11 @@ package composition;
 public class Game {
     private int answer;
     private boolean quit = false;
+    private IO io = new IO();
 
     public void startGame(){
         // Velkommen til bruger (regler: skriv q for at stoppe)
+
         // Spørg bruger om navn
         // Vi skal bruge IO til dette
 

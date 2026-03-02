@@ -5,7 +5,7 @@ class Game{
     - int answer
     - Player player
     + void startGame()
-    - void playRound()
+    - void playGame()
 }
 
 class Player{

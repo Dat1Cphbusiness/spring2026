@@ -15,6 +15,9 @@ class Player{
 
 class IO{
     - Scanner scanner
+    + void sendMessage(String msg)
+    + String promptString(String msg)
+    + int promptInt(String msg)
 }
 
 class Main{

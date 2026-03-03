@@ -6,10 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         Game game = new Game();
-      //  game.startGame();
+        game.startGame(new GraphicIO());
 
-        GraphicIO io = new GraphicIO();
-        io.sendMessage("Test colors");
+        //GraphicIO io = new GraphicIO();
+       // io.sendMessage("Test colors");
 
 /*
         Player a = new Player("a", 10);

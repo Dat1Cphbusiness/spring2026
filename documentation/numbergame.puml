@@ -35,6 +35,18 @@ class Main{
 
 class Scanner{}
 
+enum TextColor{
+    - String code
+    String getCode()
+}
+
+enum BGColor{
+    - String code
+    String getCode()
+}
+
+
+
 IO *-- Scanner
 Game *-- IO
 Game *-- Player
@@ -42,6 +54,8 @@ Main *-- Game
 IO <|-- GraphicIO
 Game *-- ScoreBoard
 ScoreBoard *-- Player
+GraphicIO *-- TextColor
+GraphicIO *-- BGColor
 
 
 @enduml

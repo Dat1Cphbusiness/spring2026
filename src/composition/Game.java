@@ -1,5 +1,6 @@
 package composition;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Game {
@@ -8,8 +9,8 @@ public class Game {
     private IO io;
     Player player;
 
-    public void startGame(){
-        io = new IO();
+    public void startGame(IO io){
+        this.io = io;
         // Vi skal bruge IO til dette
         // Velkommen til bruger (regler: skriv q for at stoppe)
         io.sendMessage("Velkommen til \n \"Gæt et tal\" ");

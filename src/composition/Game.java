@@ -5,19 +5,21 @@ import java.util.Random;
 public class Game {
     private int answer;
     private boolean quit = false;
-    private IO io = new IO();
+    private IO io;
     Player player;
 
     public void startGame(){
+        io = new IO();
+        // Vi skal bruge IO til dette
         // Velkommen til bruger (regler: skriv q for at stoppe)
         io.sendMessage("Velkommen til \n \"Gæt et tal\" ");
         // Spørg bruger om navn
         String playerName = io.promptString("Hvad er dit navn");
         player = new Player(playerName);
-        // Vi skal bruge IO til dette
 
         // Vil du spille spil y/n
         String input = io.promptString("Vil du spille et nyt spil?");
+
         // hvis brugerinput er y så kør nyt spil
         if(input.equals("y")){
             io.sendMessage("Du skal gætte et tal mellem 1 og 100");
@@ -44,7 +46,7 @@ public class Game {
             if(result == answer) {
                 guessed = true;
                 player.setScore(noOfGuesses);
-                io.sendMessage("\uD83C\uDF8A \uD83C\uDF89 Tillykke " + player.getName() +
+                io.sendMessage("Tillykke " + player.getName() +
                         ". Du har gættet tallet " + answer + " på " + noOfGuesses + " gæt!");
             }
             // Hvis det er for lavt eller for højt

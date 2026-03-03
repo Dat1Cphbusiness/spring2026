@@ -13,6 +13,13 @@ class Player{
     - int score
 }
 
+class ScoreBoard{
+    - ArrayList<Player> players
+    + void addPlayer(Player)
+    + void printTopTen()
+    + Player findPlayer(String name)
+}
+
 class IO{
     - Scanner scanner
     + void sendMessage(String msg)
@@ -33,6 +40,8 @@ Game *-- IO
 Game *-- Player
 Main *-- Game
 IO <|-- GraphicIO
+Game *-- ScoreBoard
+ScoreBoard *-- Player
 
 
 @enduml

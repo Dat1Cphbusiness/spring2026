@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Game game = new Game();
-        game.startGame(new GraphicIO());
+      //  Game game = new Game();
+      //  game.startGame(new GraphicIO());
 
-        //GraphicIO io = new GraphicIO();
-       // io.sendMessage("Test colors");
+      //  GraphicIO io = new GraphicIO();
+      //  io.sendMessage("Test colors");
 
-/*
+    /* Test af topti-print fra ScoreBoard:
         Player a = new Player("a", 10);
-        Player b =new Player("b", 9);
+        Player b = new Player("b", 9);
         Player c = new Player("c", 8);
         Player d = new Player ("d", 14);
         Player e = new Player("e", 6);
@@ -42,7 +42,12 @@ public class Main {
         scoreboard1.addPlayer(l);
         scoreboard1.addPlayer(m);
 
-        scoreboard1.printTopTenAgain();*/
+        scoreboard1.printTopTenFromSorted();
+        System.out.println("----------------------------------------------");
+        scoreboard1.printTopTen();
+
+        
+     */
 
         /* Test af players setScore-metode
         Player p = new Player("Signe", 10);

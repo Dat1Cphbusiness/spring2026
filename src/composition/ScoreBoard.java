@@ -22,7 +22,14 @@ public class ScoreBoard {
         }
         for(int i= 0; i < players.size(); i++){
             if(p.getScore() < players.get(i).getScore())
-                players.add(i, p);
+                if(i == players.size()-1){
+                    players.addLast(p);
+                    return;
+                }
+                else {
+                    players.add(i, p);
+                    return;
+                }
         }
     }
 

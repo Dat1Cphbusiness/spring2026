@@ -1,36 +1,29 @@
 package composition;
 
-import java.util.Scanner;
+public class GraphicIO extends IO {
 
-public class IO {
-
-    protected Scanner scanner = new Scanner(System.in);
-
+    @Override
     public void sendMessage(String msg){
-        printHashTags();
-        System.out.println(msg);
-        printHashTags();
+        System.out.println("\u001B[31m\u001B[44m" + msg + "\u001B[0m");
     }
 
+    @Override
     public String promptString(String msg){
-        printHashTags();
         System.out.println(msg);
         String input = scanner.nextLine();
-        printHashTags();
         return input;
     }
 
+    @Override
     public int promptInt(String msg){
-        printHashTags();
         System.out.println(msg);
         int input = scanner.nextInt();
         scanner.nextLine();
-        printHashTags();
         return input;
     }
 
-    private void printHashTags(){
-        System.out.println("###############");
-    }
+
+
+
 
 }

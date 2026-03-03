@@ -8,7 +8,10 @@ public class Main {
         Game game = new Game();
       //  game.startGame();
 
+        GraphicIO io = new GraphicIO();
+        io.sendMessage("Test colors");
 
+/*
         Player a = new Player("a", 10);
         Player b =new Player("b", 9);
         Player c = new Player("c", 8);
@@ -39,7 +42,7 @@ public class Main {
         scoreboard1.addPlayer(l);
         scoreboard1.addPlayer(m);
 
-        scoreboard1.printTopTenAgain();
+        scoreboard1.printTopTenAgain();*/
 
         /* Test af players setScore-metode
         Player p = new Player("Signe", 10);

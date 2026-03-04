@@ -18,6 +18,7 @@ class GameHistory{
 class Player{
     - int score
     + int getGuess()
+    + void responseToGuess
 }
 
 class HumanPlayer{
@@ -26,7 +27,7 @@ class HumanPlayer{
 }
 
 class ComputerPlayer{
-    
+
 }
 
 

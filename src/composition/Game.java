@@ -20,18 +20,28 @@ public class Game {
         // Velkommen til bruger (regler: skriv q for at stoppe)
         io.sendMessage("Velkommen til \n \"Gæt et tal\" ");
         // Spørg bruger om navn
-        String playerName = io.promptString("Hvad er dit navn");
-        currentPlayer = new Player(0);
-
-        // Vil du spille spil y/n
-        String input = io.promptString("Vil du spille et nyt spil?");
+        double d = Math.random();
+        if(d < 0.3){
+            String playerName = io.promptString("Hvad er dit navn");
+            currentPlayer = new HumanPlayer(playerName, 0, io);
+        }
+        else if (d < 0.6){
+            currentPlayer = new SmartComputerPlayer();
+        }
+        else {
+            currentPlayer = new StupidComputer();
+        }
+        boolean play = currentPlayer.play();
 
         // hvis brugerinput er y så kør nyt spil
-        if(input.equals("y")){
-            io.sendMessage("Du skal gætte et tal mellem 1 og 100");
+        if(play){
+            io.sendMessage("Fint! Lad os spille " + currentPlayer.getName());
+
+         //   io.sendMessage("Du skal gætte et tal mellem 1 og 100");
             // Opret et answer
             Random random = new Random();
             answer = random.nextInt(100) + 1;
+            io.sendMessage("Shhhh tallet er " + answer);
             playGame();
         }
     }
@@ -42,6 +52,7 @@ public class Game {
         while(!guessed) {
             // Bed spiller om gæt
             int result = currentPlayer.getGuess();
+            io.sendMessage(currentPlayer.getName() + ", du gættede på " + result);
             // Hold styr på antal gæt
             noOfGuesses++;
             // Tre muligheder: korrekt, for højt, for lavt
@@ -51,18 +62,19 @@ public class Game {
             if(result == answer) {
                 guessed = true;
                 currentPlayer.setScore(noOfGuesses);
-                io.sendMessage("Tillykke " + currentPlayer.getName() +
-                        ". Du har gættet tallet " + answer + " på " + noOfGuesses + " gæt!");
+                currentPlayer.responsToGuess(0);
                 scoreBoard.addPlayer(currentPlayer);
-                currentPlayer.getGameHistory().addGuess(noOfGuesses);
+                io.sendMessage("Tallet blev gættet af " +
+                        currentPlayer.getName() + " på " + noOfGuesses + " gæt.");
+              //  currentPlayer.getGameHistory().addGuess(noOfGuesses);
             }
             // Hvis det er for lavt eller for højt
             // Fortæl bruger om det er for højt eller for lavt
             // Giv bruger mulighed for at gætte igen eller afbryde spil
             else if(result > answer){
-                io.sendMessage("Nej, det var desværre for højt");
+                currentPlayer.responsToGuess(1);
             } else if(result < answer){
-                io.sendMessage("Nej, det var desværre for lavt");
+                currentPlayer.responsToGuess(-1);
             }
         }
 

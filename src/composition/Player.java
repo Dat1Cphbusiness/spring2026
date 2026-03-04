@@ -8,8 +8,19 @@ public class Player {
         this.score = score;
     }
 
+    public boolean play() {
+        return true;
+    }
+
     public int getGuess(){
         return 0;
+    }
+
+    // sende positivt tal hvis gæt er for højt
+    // negativ hvis det er for lavt
+    // 0 hvis det er korrekt
+    public void responsToGuess(int respons){
+
     }
 
     public String getName(){

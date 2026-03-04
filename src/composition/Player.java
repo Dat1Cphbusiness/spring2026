@@ -4,15 +4,21 @@ public class Player {
 
     private String name;
     private int score;
+    private GameHistory gameHistory;
 
     public Player(String name) {
-        this.name = name;
-        score = 0;
+        this(name, 0, new IO());
+
     }
 
-    public Player(String name, int score) {
+    public Player(String name, int score, IO io) {
         this.name = name;
         this.score = score;
+        this.gameHistory = new GameHistory(io);
+    }
+
+    public GameHistory getGameHistory() {
+        return gameHistory;
     }
 
     public String getName() {

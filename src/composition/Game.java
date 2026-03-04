@@ -1,22 +1,26 @@
 package composition;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Game {
     private int answer;
-    private boolean quit = false;
     private IO io;
-    Player player;
+    private Player currentPlayer;
+    private ScoreBoard scoreBoard;
 
-    public void startGame(IO io){
+    public Game(IO io){
         this.io = io;
+        scoreBoard = new ScoreBoard();
+    }
+
+    public void startGame(){
+
         // Vi skal bruge IO til dette
         // Velkommen til bruger (regler: skriv q for at stoppe)
         io.sendMessage("Velkommen til \n \"Gæt et tal\" ");
         // Spørg bruger om navn
         String playerName = io.promptString("Hvad er dit navn");
-        player = new Player(playerName);
+        currentPlayer = new Player(playerName);
 
         // Vil du spille spil y/n
         String input = io.promptString("Vil du spille et nyt spil?");
@@ -46,9 +50,11 @@ public class Game {
             // Returner til startGame
             if(result == answer) {
                 guessed = true;
-                player.setScore(noOfGuesses);
-                io.sendMessage("Tillykke " + player.getName() +
+                currentPlayer.setScore(noOfGuesses);
+                io.sendMessage("Tillykke " + currentPlayer.getName() +
                         ". Du har gættet tallet " + answer + " på " + noOfGuesses + " gæt!");
+                scoreBoard.addPlayer(currentPlayer);
+                currentPlayer.getGameHistory().addGuess(noOfGuesses);
             }
             // Hvis det er for lavt eller for højt
             // Fortæl bruger om det er for højt eller for lavt

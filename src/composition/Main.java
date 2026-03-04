@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-      //  Game game = new Game();
-      //  game.startGame(new GraphicIO());
+        Game game = new Game(new GraphicIO());
+        game.startGame();
 
       //  GraphicIO io = new GraphicIO();
       //  io.sendMessage("Test colors");
@@ -46,7 +46,7 @@ public class Main {
         System.out.println("----------------------------------------------");
         scoreboard1.printTopTen();
 
-        
+
      */
 
         /* Test af players setScore-metode

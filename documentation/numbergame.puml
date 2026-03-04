@@ -3,9 +3,16 @@
 
 class Game{
     - int answer
-    - Player player
+    - Player currentPlayer
+    - ScoreBoard scoreboard
     + void startGame()
     - void playGame()
+}
+
+class GameHistory{
+    - ArrayList<Integer> guesses
+    + void addGuess(int guess)
+    + void printHistory()
 }
 
 class Player{
@@ -56,6 +63,6 @@ Game *-- ScoreBoard
 ScoreBoard *-- Player
 GraphicIO *-- TextColor
 GraphicIO *-- BGColor
-
+Player *-- GameHistory
 
 @enduml

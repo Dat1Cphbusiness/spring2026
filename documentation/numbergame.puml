@@ -16,9 +16,20 @@ class GameHistory{
 }
 
 class Player{
-    - String name
     - int score
+    + int getGuess()
 }
+
+class HumanPlayer{
+    - String name
+    - GameHistory history
+}
+
+class ComputerPlayer{
+    
+}
+
+
 
 class ScoreBoard{
     - ArrayList<Player> players
@@ -64,5 +75,7 @@ ScoreBoard *-- Player
 GraphicIO *-- TextColor
 GraphicIO *-- BGColor
 Player *-- GameHistory
+Player <|-- HumanPlayer
+Player <|-- ComputerPlayer
 
 @enduml

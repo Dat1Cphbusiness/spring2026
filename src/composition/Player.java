@@ -2,31 +2,18 @@ package composition;
 
 public class Player {
 
-    private String name;
-    private int score;
-    private GameHistory gameHistory;
+   protected int score;
 
-    public Player(String name) {
-        this(name, 0, new IO());
-
-    }
-
-    public Player(String name, int score, IO io) {
-        this.name = name;
+    public Player(int score) {
         this.score = score;
-        this.gameHistory = new GameHistory(io);
     }
 
-    public GameHistory getGameHistory() {
-        return gameHistory;
+    public int getGuess(){
+        return 0;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public String getName(){
+        return null;
     }
 
     public int getScore() {
@@ -41,7 +28,6 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "name='" + name + '\'' +
                 ", score=" + score +
                 '}';
     }

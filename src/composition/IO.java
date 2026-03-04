@@ -6,6 +6,11 @@ public class IO {
 
     protected Scanner scanner = new Scanner(System.in);
 
+    // kode der indsættes automatisk og usynligt hvis vi ikke selv laver en konstruktør
+    public IO(){
+        super();
+    }
+
     public void sendMessage(String msg){
         printHashTags();
         System.out.println(msg);

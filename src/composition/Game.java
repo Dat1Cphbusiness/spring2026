@@ -9,6 +9,7 @@ public class Game {
     private ScoreBoard scoreBoard;
 
     public Game(IO io){
+        super();
         this.io = io;
         scoreBoard = new ScoreBoard();
     }
@@ -20,7 +21,7 @@ public class Game {
         io.sendMessage("Velkommen til \n \"Gæt et tal\" ");
         // Spørg bruger om navn
         String playerName = io.promptString("Hvad er dit navn");
-        currentPlayer = new Player(playerName);
+        currentPlayer = new Player(0);
 
         // Vil du spille spil y/n
         String input = io.promptString("Vil du spille et nyt spil?");
@@ -40,8 +41,7 @@ public class Game {
         int noOfGuesses = 0;
         while(!guessed) {
             // Bed spiller om gæt
-            // Brug IO om dette
-            int result = io.promptInt("Indtast dit gæt");
+            int result = currentPlayer.getGuess();
             // Hold styr på antal gæt
             noOfGuesses++;
             // Tre muligheder: korrekt, for højt, for lavt

@@ -8,6 +8,9 @@ public class Main {
         Game game = new Game(new GraphicIO());
         game.startGame();
 
+
+        Player player = new Player(0);
+
       //  GraphicIO io = new GraphicIO();
       //  io.sendMessage("Test colors");
 

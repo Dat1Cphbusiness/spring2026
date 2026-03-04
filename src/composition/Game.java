@@ -5,6 +5,11 @@ import java.util.Random;
 public class Game {
     private int answer;
     private IO io;
+    // variablens type er Player
+    // Det betyder den kan referere til et objekt af typen
+    // Player ELLER subklasser til Player
+    // Player er abstrakt, så det vil aldrig være et objekt
+    // af typen Player.
     private Player currentPlayer;
     private ScoreBoard scoreBoard;
 
@@ -37,12 +42,17 @@ public class Game {
         if(play){
             io.sendMessage("Fint! Lad os spille " + currentPlayer.getName());
 
-         //   io.sendMessage("Du skal gætte et tal mellem 1 og 100");
+            // er objektet som currentPlayer peger på en HumanPlayer?
+            if(currentPlayer instanceof HumanPlayer){
+                io.sendMessage("Du skal gætte et tal mellem 1 og 100");
+            }
+
             // Opret et answer
             Random random = new Random();
             answer = random.nextInt(100) + 1;
             io.sendMessage("Shhhh tallet er " + answer);
             playGame();
+
         }
     }
 

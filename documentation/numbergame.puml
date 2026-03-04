@@ -11,14 +11,14 @@ class Game{
 
 class GameHistory{
     - ArrayList<Integer> guesses
-    + void addGuess(int guess)
+    + void addGuess(int)
     + void printHistory()
 }
 
-class Player{
+abstract class Player{
     - int score
     + int getGuess()
-    + void responseToGuess
+    + void responseToGuess(int)
 }
 
 class HumanPlayer{

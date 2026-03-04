@@ -38,6 +38,10 @@ public class HumanPlayer extends Player{
         return name;
     }
 
+    public void printGameHistory(){
+
+    }
+
     @Override
     public boolean play(){
         // Vil du spille spil y/n

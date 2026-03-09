@@ -13,6 +13,7 @@ public class Weapon implements Item{
         this.damage = damage;
     }
 
+    @Override
     public int use(){
         return force - damage;
     }

@@ -34,7 +34,7 @@ public class Game {
             currentPlayer = new SmartComputerPlayer();
         }
         else {
-            currentPlayer = new StupidComputer();
+        //    currentPlayer = new StupidComputer();
         }
         boolean play = currentPlayer.play();
 
@@ -72,7 +72,7 @@ public class Game {
             if(result == answer) {
                 guessed = true;
                 currentPlayer.setScore(noOfGuesses);
-                currentPlayer.responsToGuess(0);
+              //  currentPlayer.responsToGuess(0);
                 scoreBoard.addPlayer(currentPlayer);
                 io.sendMessage("Tallet blev gættet af " +
                         currentPlayer.getName() + " på " + noOfGuesses + " gæt.");
@@ -82,9 +82,9 @@ public class Game {
             // Fortæl bruger om det er for højt eller for lavt
             // Giv bruger mulighed for at gætte igen eller afbryde spil
             else if(result > answer){
-                currentPlayer.responsToGuess(1);
+              //  currentPlayer.responsToGuess(1);
             } else if(result < answer){
-                currentPlayer.responsToGuess(-1);
+              //  currentPlayer.responsToGuess(-1);
             }
         }
 

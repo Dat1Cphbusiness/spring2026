@@ -15,6 +15,7 @@ public class Food implements Item {
         freshness--;
     }
 
+    @Override
     public int use(){
         return energy * freshness;
     }

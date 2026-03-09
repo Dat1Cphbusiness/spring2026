@@ -11,7 +11,7 @@ public class Main {
         IO io = new IO();
 
 
-        Player player1 = new Player(0);
+     //   Player player1 = new Player(0);
         Player player2 = new HumanPlayer("Signe", 0, io);
         Player player3 = new SmartComputerPlayer();
 

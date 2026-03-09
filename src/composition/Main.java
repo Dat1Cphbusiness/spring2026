@@ -8,8 +8,14 @@ public class Main {
         Game game = new Game(new GraphicIO());
         game.startGame();
 
+        IO io = new IO();
 
-        Player player = new Player(0);
+
+        Player player1 = new Player(0);
+        Player player2 = new HumanPlayer("Signe", 0, io);
+        Player player3 = new SmartComputerPlayer();
+
+
 
       //  GraphicIO io = new GraphicIO();
       //  io.sendMessage("Test colors");

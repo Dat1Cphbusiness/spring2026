@@ -18,11 +18,11 @@ public class SmartComputerPlayer extends Player{
     }
 
     @Override
-    public void responsToGuess(int i){
-        if(i < 0){
+    public void responseToGuess(int response){
+        if(response < 0){
             min = previousGuess;
         }
-        else if(i > 0){
+        else if(response > 0){
             max = previousGuess;
         }
     }
@@ -31,7 +31,4 @@ public class SmartComputerPlayer extends Player{
     public String getName(){
         return "Smart Computer";
     }
-
-
-
 }

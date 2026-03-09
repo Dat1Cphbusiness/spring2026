@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/class-diagram
+public interface Item{
+
+    int getWeight();
+    boolean isValuable();
+
+}
+@enduml

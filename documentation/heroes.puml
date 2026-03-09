@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+interface Item{
+    int use()
+
+}
+
+abstract class SuperItem{
+    int use();
+}
+
+class Food{
+void reduceFreshness()
+}
+class Weapon{
+void setDamage()
+}
+
+
+Item <..Food
+Item <..Weapon
+SuperItem <-- Food
+SuperItem <-- Weapon
+@enduml

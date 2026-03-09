@@ -1,5 +1,9 @@
 @startuml
 'https://plantuml.com/class-diagram
+interface Item{
+    getWeight
+}
+
 
 class Game{
     - int answer
@@ -9,11 +13,8 @@ class Game{
     - void playGame()
 }
 
-class GameHistory{
-    - ArrayList<Integer> guesses
-    + void addGuess(int)
-    + void printHistory()
-}
+
+
 
 abstract class Player{
     - int score
@@ -68,14 +69,14 @@ enum BGColor{
 
 IO *-- Scanner
 Game *-- IO
-Game *-- Player
+
 Main *-- Game
 IO <|-- GraphicIO
 Game *-- ScoreBoard
-ScoreBoard *-- Player
+
 GraphicIO *-- TextColor
 GraphicIO *-- BGColor
-Player *-- GameHistory
+
 Player <|-- HumanPlayer
 Player <|-- ComputerPlayer
 

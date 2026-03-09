@@ -18,4 +18,6 @@ public class StupidComputer extends Player{
     public String getName(){
         return "Stupid Computer";
     }
+
+
 }

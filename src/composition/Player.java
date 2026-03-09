@@ -1,7 +1,6 @@
 package composition;
 
 public abstract class Player {
-
    protected int score;
 
     public Player(int score) {
@@ -12,15 +11,6 @@ public abstract class Player {
         return true;
     }
 
-    public abstract int getGuess();
-
-    // sende positivt tal hvis gæt er for højt
-    // negativ hvis det er for lavt
-    // 0 hvis det er korrekt
-    public abstract void responsToGuess(int respons);
-
-    public abstract String getName();
-
     public int getScore() {
         return score;
     }
@@ -30,6 +20,12 @@ public abstract class Player {
             this.score = score;
     }
 
+    public abstract int getGuess();
+
+    public abstract void responseToGuess(int response);
+
+    public abstract String getName();
+
     @Override
     public String toString() {
         return "Player{" +
@@ -37,3 +33,10 @@ public abstract class Player {
                 '}';
     }
 }
+
+
+
+
+// sende positivt tal hvis gæt er for højt
+// negativ hvis det er for lavt
+// 0 hvis det er korrekt

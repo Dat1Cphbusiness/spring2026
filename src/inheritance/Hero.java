@@ -37,9 +37,9 @@ public class Hero {
 
     public int getTotalWeight(){
         int sum = 0;
-        for(Item i : otherItems){
+     //   for(Item i : otherItems){
       //      sum += i.getWeight();
-        }
+      //  }
 
         return sum;
     }

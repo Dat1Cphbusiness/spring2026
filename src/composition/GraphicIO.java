@@ -6,7 +6,7 @@ public class GraphicIO extends IO {
 
     @Override
     public void sendMessage(String msg){
-        System.out.println(RED + msg + RESET);
+        System.out.println(RED.getCode() + msg + RESET);
 
     }
 

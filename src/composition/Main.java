@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Game game = new Game(new GraphicIO());
-        game.startGame();
+      //  game.startGame();
 
         IO io = new IO();
 
@@ -20,20 +20,20 @@ public class Main {
       //  GraphicIO io = new GraphicIO();
       //  io.sendMessage("Test colors");
 
-    /* Test af topti-print fra ScoreBoard:
-        Player a = new Player("a", 10);
-        Player b = new Player("b", 9);
-        Player c = new Player("c", 8);
-        Player d = new Player ("d", 14);
-        Player e = new Player("e", 6);
-        Player f = new Player("f", 15);
-        Player g = new Player ("g", 41);
-        Player h = new Player ("h", 44);
-        Player i = new Player ("i", 80);
-        Player j = new Player ("j", 22);
-        Player k = new Player ("k", 55);
-        Player l = new Player ("l", 34);
-        Player m = new Player ("m", 65);
+    //Test af topti-print fra ScoreBoard:
+        Player a = new HumanPlayer("a", 10, io);
+        Player b = new SmartComputerPlayer();
+        Player c = new StupidComputer();
+        Player d = new HumanPlayer ("d", 14, io);
+        Player e = new HumanPlayer("e", 6, io);
+        Player f = new SmartComputerPlayer();
+        Player g = new HumanPlayer ("g", 41, io);
+        Player h = new HumanPlayer ("h", 44, io);
+        Player i = new HumanPlayer ("i", 80, io);
+        Player j = new HumanPlayer ("j", 22, io);
+        Player k = new HumanPlayer ("k", 55, io);
+        //Player l = new Player ("l", 34);
+        //Player m = new Player ("m", 65);
 
         ScoreBoard scoreboard1 = new ScoreBoard();
 
@@ -48,15 +48,16 @@ public class Main {
         scoreboard1.addPlayer(i);
         scoreboard1.addPlayer(j);
         scoreboard1.addPlayer(k);
-        scoreboard1.addPlayer(l);
-        scoreboard1.addPlayer(m);
+       // scoreboard1.addPlayer(l);
+        // scoreboard1.addPlayer(m);
 
-        scoreboard1.printTopTenFromSorted();
-        System.out.println("----------------------------------------------");
-        scoreboard1.printTopTen();
+        scoreboard1.sortAndPrint();
+      //  scoreboard1.printTopTenFromSorted();
+      //  System.out.println("----------------------------------------------");
+        //  scoreboard1.printTopTen();
 
 
-     */
+
 
         /* Test af players setScore-metode
         Player p = new Player("Signe", 10);

@@ -1,10 +1,21 @@
 package composition;
 
-public abstract class Player {
+public abstract class Player implements Comparable<Player> {
    protected int score;
 
     public Player(int score) {
         this.score = score;
+    }
+
+    @Override
+    public int compareTo(Player other){
+        if (this.score == 0)
+            return 1;
+        else if(this.score < other.score)
+            return -1;
+        else if (this.score == other.score)
+            return 0;
+        return 1;
     }
 
     public boolean play() {

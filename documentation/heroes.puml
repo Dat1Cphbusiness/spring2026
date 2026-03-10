@@ -21,6 +21,6 @@ void setDamage()
 
 Item <..Food
 Item <..Weapon
-SuperItem <-- Food
-SuperItem <-- Weapon
+SuperItem <|-- Food
+SuperItem <|--Weapon
 @enduml

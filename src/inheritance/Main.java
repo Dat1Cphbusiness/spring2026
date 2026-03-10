@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Main {
 
 
@@ -9,6 +11,9 @@ public class Main {
       //  Item item1 = new Item();
         Item apple = new Food("Apple", 40, 100);
         Item sword = new Weapon(50);
+
+        ArrayList<Food> foods = new ArrayList<>();
+        foods.add((Food)apple);
 
         int result = apple.use();
         int result2 = sword.use();

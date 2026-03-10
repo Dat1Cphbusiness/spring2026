@@ -1,6 +1,7 @@
 package composition;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ScoreBoard {
 
@@ -8,6 +9,7 @@ public class ScoreBoard {
     private ArrayList<Player> players;
     // Sorteret liste
     private ArrayList<Player> sortedList;
+
     private IO io = new IO();
 
     public ScoreBoard (){
@@ -51,6 +53,13 @@ public class ScoreBoard {
                 return p;
         }
         return null;
+    }
+
+    public void sortAndPrint(){
+        Collections.sort(players);
+        for(int i = 0; i < 10 && i < players.size(); i++){
+            io.sendMessage(players.get(i).getName() + ": " + players.get(i).getScore());
+        }
     }
 
     public void printTopTenFromSorted(){

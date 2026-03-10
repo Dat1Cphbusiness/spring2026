@@ -2,7 +2,7 @@ package composition;
 
 import java.util.Random;
 
-public abstract class StupidComputer extends Player{
+public class StupidComputer extends Player{
 
     public StupidComputer(){
         super(0);
@@ -19,5 +19,9 @@ public abstract class StupidComputer extends Player{
         return "Stupid Computer";
     }
 
+    @Override
+    public void responseToGuess(int i){
+
+    }
 
 }
